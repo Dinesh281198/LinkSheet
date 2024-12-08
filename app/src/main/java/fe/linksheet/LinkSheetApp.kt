@@ -28,8 +28,7 @@ import fe.linksheet.module.devicecompat.miui.RealMiuiCompatProvider
 import fe.linksheet.module.devicecompat.samsung.RealSamsungIntentCompatProvider
 import fe.linksheet.module.devicecompat.samsung.SamsungIntentCompatProvider
 import fe.linksheet.module.downloader.downloaderModule
-import fe.linksheet.module.http.okHttpModule
-import fe.linksheet.module.http.requestModule
+import fe.linksheet.module.http.HttpClientModule
 import fe.linksheet.module.log.defaultLoggerModule
 import fe.linksheet.module.log.file.entry.LogEntry
 import fe.linksheet.module.log.file.entry.LogEntryDeserializer
@@ -50,6 +49,7 @@ import fe.linksheet.module.shizuku.shizukuHandlerModule
 import fe.linksheet.module.statistic.statisticsModule
 import fe.linksheet.module.systeminfo.SystemInfoServiceModule
 import fe.linksheet.module.unfurler.unfurlerModule
+import fe.linksheet.module.unfurler.UnfurlerModule
 import fe.linksheet.module.versiontracker.VersionTrackerModule
 import fe.linksheet.module.viewmodel.module.viewModelModule
 import fe.linksheet.util.AndroidVersion
@@ -146,9 +146,8 @@ open class LinkSheetApp : Application(), DependencyProvider {
             resolverModule,
             repositoryModule,
             viewModelModule,
-            requestModule,
-            okHttpModule,
-            unfurlerModule,
+            HttpClientModule,
+            UnfurlerModule,
             downloaderModule,
             provideAnalyticsClient(),
             analyticsServiceModule,
