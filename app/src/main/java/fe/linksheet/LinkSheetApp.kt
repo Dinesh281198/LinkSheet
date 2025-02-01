@@ -48,7 +48,6 @@ import fe.linksheet.module.resolver.urlresolver.redirect.redirectResolveRequestM
 import fe.linksheet.module.shizuku.shizukuHandlerModule
 import fe.linksheet.module.statistic.statisticsModule
 import fe.linksheet.module.systeminfo.SystemInfoServiceModule
-import fe.linksheet.module.unfurler.unfurlerModule
 import fe.linksheet.module.unfurler.UnfurlerModule
 import fe.linksheet.module.versiontracker.VersionTrackerModule
 import fe.linksheet.module.viewmodel.module.viewModelModule

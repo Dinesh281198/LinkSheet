@@ -53,7 +53,8 @@ val databaseModule = module {
         AutoMigration(from = 9, to = 10),
         AutoMigration(from = 10, to = 11),
         AutoMigration(from = 11, to = 12),
-        AutoMigration(from = 12, to = 13)
+        AutoMigration(from = 12, to = 13),
+        AutoMigration(from = 17, to = 18)
     ],
     exportSchema = true
 )
@@ -80,11 +81,16 @@ abstract class LinkSheetDatabase : RoomDatabase() {
             )
         }
 
+        fun Builder<LinkSheetDatabase>.configureAndBuild(logger: Logger): LinkSheetDatabase {
+            return addCallback(KnownInitCallback(ResolveType))
+                .addMigrations(*buildMigrations(logger))
+                .build()
+        }
+
         fun create(context: Context, logger: Logger, name: String): LinkSheetDatabase {
             return Room
                 .databaseBuilder(context, LinkSheetDatabase::class.java, name)
-                .addMigrations(*buildMigrations(logger))
-                .build()
+                .configureAndBuild(logger)
         }
     }
 }
