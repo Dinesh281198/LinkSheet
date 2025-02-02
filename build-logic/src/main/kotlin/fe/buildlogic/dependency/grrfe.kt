@@ -2,7 +2,6 @@ package fe.buildlogic.dependency
 
 import de.fayard.refreshVersions.core.DependencyGroup
 import de.fayard.refreshVersions.core.DependencyNotation
-import de.fayard.refreshVersions.core.DependencyNotation.Companion.invoke
 import de.fayard.refreshVersions.core.DependencyNotationAndGroup
 import org.gradle.kotlin.dsl.IsNotADependency
 
@@ -37,7 +36,6 @@ object Grrfe : DependencyGroup(group = "com.gitlab.grrfe") {
             val core = DependencyNotation(group = group, name = "time-core")
             val java = DependencyNotation(group = group, name = "time-java")
         }
-
 
         val result = Result
 
